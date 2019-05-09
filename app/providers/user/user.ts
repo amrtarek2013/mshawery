@@ -86,4 +86,23 @@ export class User {
     // this.storage.set('token', resp.token);
     this._user = resp.user;
   }
+
+  register(accountInfo: any) {
+    let seq = this.api.post('register', accountInfo);
+    console.log(seq);
+    console.log(accountInfo);
+    
+     seq.subscribe((res: any) => {
+         console.log(res);
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+        this._loggedIn(res);
+      } else {
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
+  }
 }

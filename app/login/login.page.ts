@@ -118,7 +118,7 @@ export class LoginPage implements OnInit {
           //console.log(this.storage.get('token'));
          // if (resp.status == 'success') {
             this.FormReg('DDDDDDDDDD');
-            this.navCtrl.navigateRoot('/home');
+            this.navCtrl.navigateRoot('/selectuser');
          // } else {
             this.FormReg('Wrong Data');
             

@@ -27,6 +27,11 @@ export class AppComponent {
       title: 'Login',
       url: '/login',
       icon: 'list'
+    },
+    {
+      title: 'Select',
+      url: '/selectuser',
+      icon: 'list'
     }
   ];
 
