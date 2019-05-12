@@ -18,7 +18,11 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'selectuser', loadChildren: './selectuser/selectuser.module#SelectuserPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
-  { path: 'register-driver', loadChildren: './register-driver/register-driver.module#RegisterDriverPageModule' }
+  { path: 'register-driver', loadChildren: './register-driver/register-driver.module#RegisterDriverPageModule' },
+  { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
+  { path: 'verify-account', loadChildren: './verify-account/verify-account.module#VerifyAccountPageModule' },
+  { path: 'add-car', loadChildren: './add-car/add-car.module#AddCarPageModule' },
+  { path: 'add-location', loadChildren: './add-location/add-location.module#AddLocationPageModule' }
 ];
 
 @NgModule({

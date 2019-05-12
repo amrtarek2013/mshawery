@@ -1,10 +1,8 @@
 :host {
     ion-content {
-        --background: linear-gradient(135deg,#f5f5f5, #f5f5f5);
-        // --background: url("/assets/img/bg.jpg") no-repeat;
-    background-size: cover;
+      --background: linear-gradient(-135deg, var(--ion-color-medium), var(--ion-color-light))
     }
-}
+  }
 
 // .video-bg {
 //     position: fixed;
