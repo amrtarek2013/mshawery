@@ -1,0 +1,92 @@
+<ion-content padding class="animated fadeIn login auth-page">
+ 
+
+  <div class="bg-div"></div>
+    
+      <div class="auth-content">
+    
+        <!-- Logo -->
+        <div padding-horizontal text-center class="animated fadeInDown">
+          <div class="logo"></div>
+
+        </div>
+    
+        <!-- Login form -->
+        <div class="form-container">
+        <form [formGroup]="onLoginForm" class="list-form">
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-label position="floating">
+              <ion-icon name="mail" item-start></ion-icon>
+              {{ 'app.label.email' | translate }}
+            </ion-label>
+            <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+          </ion-item>
+        
+    
+          <ion-item no-padding class="animated fadeInUp">
+            <ion-label position="floating">
+              <ion-icon name="lock" item-start></ion-icon>
+              {{ 'app.label.password' | translate }}
+            </ion-label>
+            <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+          </ion-item>
+           
+        </form>
+    
+        <p text-right tappable (click)="forgotPass()" class="paz">
+          <ion-text color="tertiary">
+            <strong>{{ 'app.pages.login.label.forgot' | translate }}</strong>
+          </ion-text>
+        </p>
+    
+        <div>
+          <ion-button icon-left size="medium" expand="full"   color="primary" (click)="goToHome()"  tappable>
+            <ion-icon name="log-in"></ion-icon>
+            {{ 'app.button.signin' | translate }}
+          </ion-button> 
+    
+          <p text-center>
+            <ion-text color="light">
+              Or :
+            </ion-text>
+          </p>
+
+          <ion-button icon-left size="medium" expand="full"   color="medium" (click)="goToHome()"  tappable>
+             Register
+          </ion-button> 
+
+          <ion-grid class="btn-group">
+            <ion-row>
+              <ion-col size="4">
+                <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+                  <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+                  <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+                </ion-button>
+              </ion-col>
+              <ion-col size="4">
+                <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+                  <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+    
+        </div>
+    
+        <!-- Other links -->
+        <div text-center margin-top>
+          <span (click)="goToRegister()" class="paz" tappable>
+            <ion-text color="light">
+              New here? <strong>{{ 'app.button.signup' | translate }}</strong>
+            </ion-text>
+          </span>
+        </div>
+    
+      </div>
+    </div>
+ 
+</ion-content>

@@ -22,7 +22,10 @@ const routes: Routes = [
   { path: 'edit-profile', loadChildren: './edit-profile/edit-profile.module#EditProfilePageModule' },
   { path: 'verify-account', loadChildren: './verify-account/verify-account.module#VerifyAccountPageModule' },
   { path: 'add-car', loadChildren: './add-car/add-car.module#AddCarPageModule' },
-  { path: 'add-location', loadChildren: './add-location/add-location.module#AddLocationPageModule' }
+  { path: 'add-location', loadChildren: './add-location/add-location.module#AddLocationPageModule' },
+  { path: 'login-driver', loadChildren: './login-driver/login-driver.module#LoginDriverPageModule' },
+  { path: 'car-photos', loadChildren: './car-photos/car-photos.module#CarPhotosPageModule' },
+  { path: 'car-features', loadChildren: './car-features/car-features.module#CarFeaturesPageModule' }
 ];
 
 @NgModule({

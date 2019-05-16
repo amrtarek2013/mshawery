@@ -49,7 +49,7 @@ export class RegisterDriverPage implements OnInit {
 
   // // //
   goToLogin() {
-    this.navCtrl.navigateRoot('/login');
+    this.navCtrl.navigateRoot('/login-driver');
   }
 
 }
