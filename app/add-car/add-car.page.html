@@ -9,7 +9,7 @@
   
   
   <ion-content padding class="animated fadeIn">
-      <form [formGroup]="" class="list-form">
+      <form [formGroup]="addCarForm" class="list-form">
           <ion-item no-padding class="animated fadeInUp">
             <ion-label position="floating">
               <!--<ion-icon name="navigate" item-start></ion-icon>-->
@@ -22,7 +22,7 @@
             </ion-text>
                 <ion-item no-padding class="animated fadeInUp">
                 <ion-label> <!--{{ 'app.label.make' | translate }}--> Make</ion-label>
-                <ion-select placeholder="Select One">
+                <ion-select placeholder="Select One" formControlName="make">
                     <ion-select-option value="bmw">BMW</ion-select-option>
                     <ion-select-option value="chevrolet">Chevrolet</ion-select-option>
                     <ion-select-option value="dodge">Dodge</ion-select-option>
@@ -35,7 +35,7 @@
               </ion-item>
               <ion-item no-padding class="animated fadeInUp">
                   <ion-label> <!--{{ 'app.label.model' | translate }}--> Model</ion-label>
-                  <ion-select placeholder="Select One">
+                  <ion-select placeholder="Select One" formControlName="model">
                       <ion-select-option value="bmw">BMW</ion-select-option>
                       <ion-select-option value="chevrolet">Chevrolet</ion-select-option>
                       <ion-select-option value="dodge">Dodge</ion-select-option>
@@ -48,7 +48,7 @@
                 </ion-item>
                 <ion-item no-padding class="animated fadeInUp">
                     <ion-label> <!--{{ 'app.label.year' | translate }}--> Year</ion-label>
-                    <ion-select placeholder="Select One">
+                    <ion-select placeholder="Select One" formControlName="year">
                         <ion-select-option value="2017">2017</ion-select-option>
                         <ion-select-option value="2018">2018</ion-select-option>
                         <ion-select-option value="2019">2019</ion-select-option>
@@ -66,77 +66,22 @@
           <ion-text color="danger">
               <h4>TRANSMISSION</h4>
             </ion-text>
-          <ion-row radio-group  [(ngModel)]="something">
+          <ion-row radio-group>
               <ion-col>
                    <ion-item>
                       <ion-label> <!--{{ 'app.label.automatic' | translate }}-->Automatic</ion-label>
-                      <ion-radio mode="md" item-left value="A"></ion-radio>
+                      <ion-radio mode="md" item-left value="A" formControlName="trans"></ion-radio>
                  </ion-item>
                </ion-col>
           
               <ion-col>
                   <ion-item>
                       <ion-label><!--{{ 'app.label.manual' | translate }}-->Manual</ion-label>
-                      <ion-radio mode="md" item-left value="B"></ion-radio>
+                      <ion-radio mode="md" item-left value="B" formControlName="trans"></ion-radio>
                  </ion-item>
               </ion-col>
-         
-          </ion-row>
-          <ion-button expand="full" color="danger">Next</ion-button>
-        </form>   
-    <!--<ion-grid fixed>
-      <ion-row>
-        <ion-col>
-            
-          <h6 no-margin margin-bottom>
-            <ion-text color="primary">Make:</ion-text>
-          </h6>
-          <ion-card no-margin margin-bottom class="bg-white">
-            <ion-item>
-              <ion-label>
-                <ion-text color="primary">One or more:</ion-text>
-              </ion-label>
-              <ion-select [(ngModel)]="toppings" color="primary" multiple="true" cancelText="Cancel" okText="OK">
-                <ion-select-option value="audi" selected="true">Audi</ion-select-option>
-                <ion-select-option value="bmw">BMW</ion-select-option>
-                <ion-select-option value="chevrolet" selected="true">Chevrolet</ion-select-option>
-                <ion-select-option value="dodge">Dodge</ion-select-option>
-                <ion-select-option value="fiat">FIAT</ion-select-option>
-                <ion-select-option value="ford">Ford</ion-select-option>
-                <ion-select-option value="honda">Honda</ion-select-option>
-                <ion-select-option value="toyota">Toyota</ion-select-option>
-                <ion-select-option value="volvo">Volvo</ion-select-option>
-              </ion-select>
-            </ion-item>
-          </ion-card>
-          <h6 no-margin margin-bottom>
-              <ion-text color="primary">Model:</ion-text>
-            </h6>
-          <ion-card no-margin margin-bottom class="bg-white">
-              <ion-item>
-                <ion-label>
-                  <ion-text color="primary">One or more:</ion-text>
-                </ion-label>
-                <ion-select [(ngModel)]="toppings" color="primary" multiple="true" cancelText="Cancel" okText="OK">
-                  <ion-select-option value="audi" selected="true">Audi</ion-select-option>
-                  <ion-select-option value="bmw">BMW</ion-select-option>
-                  <ion-select-option value="chevrolet" selected="true">Chevrolet</ion-select-option>
-                  <ion-select-option value="dodge">Dodge</ion-select-option>
-                  <ion-select-option value="fiat">FIAT</ion-select-option>
-                  <ion-select-option value="ford">Ford</ion-select-option>
-                  <ion-select-option value="honda">Honda</ion-select-option>
-                  <ion-select-option value="toyota">Toyota</ion-select-option>
-                  <ion-select-option value="volvo">Volvo</ion-select-option>
-                </ion-select>
-              </ion-item>
-            </ion-card>
-          <ion-button shape="round" expand="full" color="dark" (click)="doSearch()">
-            <ion-icon slot="start" name="search"></ion-icon> Search
-            Add 
-          </ion-button>
-    
-        </ion-col>
-      </ion-row>
-    </ion-grid>-->
+             </ion-row>
+      </form>   
+        <ion-button expand="full" color="danger" (click)="addCar()" >Next</ion-button>
   </ion-content>
   

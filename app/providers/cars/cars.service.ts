@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CARS } from './mock-cars';
+import { Api } from '../api/api';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { CARS } from './mock-cars';
 export class CarsService {
   private cars: any;
 
-  constructor() {
+  constructor( public api: Api) {
     this.cars = CARS;
   }
 
@@ -39,5 +40,20 @@ export class CarsService {
 
   remove(item) {
     this.cars.splice(this.cars.indexOf(item), 1);
+  }
+
+  addcarz(carinfo: any) {
+    let seq = this.api.post('addcarz', carinfo);
+
+    seq.subscribe((res: any) => {
+      // If the API returned a successful response, mark the user as logged in
+      if (res.status == 'success') {
+       console.log("SUCCESS");
+      }
+    }, err => {
+      console.error('ERROR', err);
+    });
+
+    return seq;
   }
 }

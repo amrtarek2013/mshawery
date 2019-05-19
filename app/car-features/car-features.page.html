@@ -1,45 +1,46 @@
 <ion-content padding>
+    <form [formGroup]="addCarFeatures" class="list-form">
     <ion-text color="danger">
         <h4>DESCRIPTION</h4>
       </ion-text>
 
  <ion-item no-padding class="animated fadeInUp">
-      <ion-input color="secondary" type="text" placeholder="Add a brief description of your car"></ion-input>
+      <ion-input color="secondary" type="text" placeholder="Add a brief description of your car" formControlName="description"></ion-input>
   </ion-item>
  <ion-text color="danger">
     <h4>FEATURES</h4>
   </ion-text>
   <ion-item >
- <ion-checkbox slot="end"></ion-checkbox>
+ <ion-checkbox slot="end" formControlName="radio"></ion-checkbox>
   <ion-label>Radio</ion-label>
 </ion-item>
 <ion-item >
-    <ion-checkbox slot="end"></ion-checkbox>
+    <ion-checkbox slot="end" formControlName="leatherseats"></ion-checkbox>
      <ion-label>Leather Seats</ion-label>
    </ion-item>
    <ion-item >
-      <ion-checkbox slot="end"></ion-checkbox>
+      <ion-checkbox slot="end" formControlName="cdplayer"></ion-checkbox>
        <ion-label>CD Player</ion-label>
      </ion-item>
      <ion-item >
-        <ion-checkbox slot="end"></ion-checkbox>
+        <ion-checkbox slot="end" formControlName="ac"></ion-checkbox>
          <ion-label>AC</ion-label>
        </ion-item>
        <ion-text color="danger">
           <h4>SMOKING</h4>
         </ion-text>
-      <ion-row radio-group  [(ngModel)]="something">
+      <ion-row radio-group  >
           <ion-col>
                <ion-item>
                   <ion-label> <!--{{ 'app.label.automatic' | translate }}-->Non-smoking</ion-label>
-                  <ion-radio mode="md" item-left value="A"></ion-radio>
+                  <ion-radio mode="md" item-left value="A" formControlName="smoke"></ion-radio>
              </ion-item>
            </ion-col>
       
           <ion-col>
               <ion-item>
                   <ion-label><!--{{ 'app.label.manual' | translate }}-->Smoking</ion-label>
-                  <ion-radio mode="md" item-left value="B"></ion-radio>
+                  <ion-radio mode="md" item-left value="B"  formControlName="smoke"></ion-radio>
              </ion-item>
           </ion-col>
           </ion-row>
@@ -47,19 +48,21 @@
               <h4>INCLUDED ACCESSORIES</h4>
             </ion-text>
             <ion-item >
-           <ion-checkbox slot="end"></ion-checkbox>
+           <ion-checkbox slot="end" formControlName="fireext"></ion-checkbox>
             <ion-label>Fire Extinguisher</ion-label>
           </ion-item>
           <ion-item >
-              <ion-checkbox slot="end"></ion-checkbox>
+              <ion-checkbox slot="end" formControlName="extratyre"></ion-checkbox>
                <ion-label>Extra Tyre</ion-label>
              </ion-item>
              <ion-item >
-                <ion-checkbox slot="end"></ion-checkbox>
+                <ion-checkbox slot="end" formControlName="firstaid"></ion-checkbox>
                  <ion-label>First Aid Kit </ion-label>
                </ion-item>
                <ion-item >
-                  <ion-checkbox slot="end"></ion-checkbox>
+                  <ion-checkbox slot="end" formControlName="carseat"></ion-checkbox>
                    <ion-label>Car Seat</ion-label>
                  </ion-item>
+                 </form>
+                 <ion-button expand="full" color="danger" (click)="addFeatures()" >Add </ion-button>
 </ion-content>
