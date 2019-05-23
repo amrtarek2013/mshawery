@@ -24,8 +24,9 @@ const routes: Routes = [
   { path: 'add-car', loadChildren: './add-car/add-car.module#AddCarPageModule' },
   { path: 'add-location', loadChildren: './add-location/add-location.module#AddLocationPageModule' },
   { path: 'login-driver', loadChildren: './login-driver/login-driver.module#LoginDriverPageModule' },
-  { path: 'car-photos', loadChildren: './car-photos/car-photos.module#CarPhotosPageModule' },
-  { path: 'car-features', loadChildren: './car-features/car-features.module#CarFeaturesPageModule' }
+  { path: 'car-photos/:id', loadChildren: './car-photos/car-photos.module#CarPhotosPageModule' },
+  //{ path: 'car-features', loadChildren: './car-features/car-features.module#CarFeaturesPageModule' }
+  { path: 'car-features/:id', loadChildren: './car-features/car-features.module#CarFeaturesPageModule' }
 ];
 
 @NgModule({

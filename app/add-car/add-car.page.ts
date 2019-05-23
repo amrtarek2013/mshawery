@@ -41,16 +41,8 @@ export class AddCarPage implements OnInit {
     this.carservice.addcarz(this.addCarForm.value).subscribe((resp) => {
           // this.navCtrl.push(MainPage);
           let car_id = resp['id'];
-          console.log(resp['id']);
-        //  this.navCtrl.navigateForward('/car-features',)
-         // this.router.navigate(['/car-features',{item:car_id}])
-         // this.router.navigateByUrl('pages/(CarFeaturesPage:{car_id}');
-      //  this.router.navigate(['/car-features']);
-  //    this.navCtrl.navigateForward(['/car-features']);
-
-       /*  this.navCtrl.goForward(this.carfeatures,{
-            item:(resp.id)
-            });*/
+          this.router.navigate(['/car-features',car_id]);
+ 
           //console.log(this.storage.get('token'));
          // if (resp.status == 'success') {
         //    this.FormReg('DDDDDDDDDD');

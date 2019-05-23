@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 })
 export class CarFeaturesPage implements OnInit {
   public addCarFeatures: FormGroup;
-  
+   public token ;
+   public car_ID: string;
   constructor(
     public navCtrl: NavController, 
     public loadingCtrl: LoadingController, 
@@ -22,12 +23,14 @@ export class CarFeaturesPage implements OnInit {
     public carservice: CarsService,  
     public router: Router
   ) {
-   
+ 
    }
 
   ngOnInit() {
+    this.token = location.href.split('/')[4];
     this.addCarFeatures = new FormGroup({
       description: new FormControl(),
+      carid: new FormControl(this.token),
       radio: new FormControl(),
       leatherseats: new FormControl(),
       cdplayer: new FormControl(),
@@ -38,10 +41,34 @@ export class CarFeaturesPage implements OnInit {
       firstaid: new FormControl(),
       carseat: new FormControl(),
    });
-  }
+
+
+   }
 
   addFeatures(){
-    console.log(this.addCarFeatures.value);
-  }
+       //this.addCarFeatures.value;
+       this.carservice.addcarz(this.addCarFeatures.value).subscribe((resp) => {
+        
+         let car_id = resp['car_feature'];
+
+        this.router.navigate(['/car-photos',car_id]);
+
+        //console.log(this.storage.get('token'));
+       // if (resp.status == 'success') {
+      //    this.FormReg('DDDDDDDDDD');
+         //this.navCtrl.navigateRoot('/selectuser');
+       // } else {
+         // this.FormReg('Wrong Data');
+          
+      //  }
+        
+
+    
+      }, (err) => {
+        
+      
+      });
+    
+     }
 
 }

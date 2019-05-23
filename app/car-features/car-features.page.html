@@ -1,9 +1,10 @@
 <ion-content padding>
     <form [formGroup]="addCarFeatures" class="list-form">
+        <ion-input color="secondary" type="text" formControlName="carid"></ion-input>
     <ion-text color="danger">
         <h4>DESCRIPTION</h4>
       </ion-text>
-
+   
  <ion-item no-padding class="animated fadeInUp">
       <ion-input color="secondary" type="text" placeholder="Add a brief description of your car" formControlName="description"></ion-input>
   </ion-item>
@@ -29,7 +30,7 @@
        <ion-text color="danger">
           <h4>SMOKING</h4>
         </ion-text>
-      <ion-row radio-group  >
+      <ion-row radio-group>
           <ion-col>
                <ion-item>
                   <ion-label> <!--{{ 'app.label.automatic' | translate }}-->Non-smoking</ion-label>
